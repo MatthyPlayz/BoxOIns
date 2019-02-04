@@ -5,7 +5,10 @@ def download_file(url, filename):
 	testfile.retrieve(url, filename)
 
 def webIns(insName, insLocationList, filenameList, insDescList):
-	defMinPercent = 100 / len(insLocationList)
+        if(insLocationList=0):
+            defMinPercent = 100
+        else:
+            defMinPercent = 100 / len(insLocationList)
 	print("\n" * 100)
 	for i in range(0, len(insLocationList)):
 		download_file(insLocationList[i], filenameList[i])
